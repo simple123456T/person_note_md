@@ -1,7 +1,7 @@
 ---
 title: "minicpm-v4.6"
 created: "2026-09-07 09:50:33"
-updated: "2026-09-07 09:52:52"
+updated: "2026-09-07 17:12:43"
 folder: "模型部署/198服务器模型部署"
 ---
 
@@ -28,4 +28,31 @@ docker run -d \
   --limit-mm-per-prompt '{"image": 1}'
 ```
 
+# 测试脚本
 
+```
+curl --location --request POST 'http://10.118.21.198:36523/v1/chat/completions' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "model": "MiniCPM-V-4.6",
+  "messages": [
+    {
+      "role": "user",
+      "content": [
+        {
+          "type": "text",
+          "text": "请描述这张图片的内容。"
+        },
+        {
+          "type": "image_url",
+          "image_url": {
+            "url": "https://img-blog.csdnimg.cn/fcc22710385e4edabccf2451d5f64a99.jpeg"
+          }
+        }
+      ]
+    }
+  ],
+  "max_tokens": 1000,
+  "temperature": 0.7
+}'
+```

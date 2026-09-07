@@ -1,7 +1,7 @@
 ---
-title: "5"
+title: "5-chatgpt"
 created: "2026-09-06 22:42:24"
-updated: "2026-09-06 22:42:28"
+updated: "2026-09-07 13:41:22"
 folder: "222"
 ---
 

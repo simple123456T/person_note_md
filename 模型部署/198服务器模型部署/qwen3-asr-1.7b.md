@@ -1,7 +1,7 @@
 ---
 title: "qwen3-asr-1.7b"
 created: "2026-09-07 09:56:01"
-updated: "2026-09-07 09:57:18"
+updated: "2026-09-07 17:11:03"
 folder: "模型部署/198服务器模型部署"
 ---
 
@@ -34,4 +34,14 @@ services:
             - driver: nvidia
               count: 1
               capabilities: [gpu]
+```
+
+
+# 测试脚本
+
+```
+curl --location --request POST 'http://10.118.21.198:17860/v1/audio/transcriptions' \
+--form 'file=@"C:\\Users\\tuc\\Desktop\\huanyu\\音频模型测试\\音频测试文件【普通话测试文件（约20分钟）】\\NEW_0001_mono.wav"' \
+--form 'model="Qwen3-ASR-1.7B"' \
+--form 'language="zh"'
 ```

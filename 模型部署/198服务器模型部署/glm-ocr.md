@@ -1,7 +1,7 @@
 ---
 title: "glm-ocr"
 created: "2026-09-07 09:38:56"
-updated: "2026-09-07 09:53:01"
+updated: "2026-09-07 17:14:21"
 folder: "模型部署/198服务器模型部署"
 ---
 
@@ -33,3 +33,26 @@ docker run -d \
       --trust-remote-code
 ```
 
+```
+curl --location --request POST 'http://10.118.21.198:35663/v1/chat/completions' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "model": "glm-ocr",
+  "messages": [
+    {
+      "role": "user",
+      "content": [
+        
+        {
+          "type": "image_url",
+          "image_url": {
+            "url": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wB......"
+          }
+        }
+      ]
+    }
+  ],
+  "max_tokens": 2048,
+  "temperature": 0
+}'
+```
