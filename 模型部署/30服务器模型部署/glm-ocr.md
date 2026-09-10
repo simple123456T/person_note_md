@@ -1,18 +1,14 @@
 ---
 title: "glm-ocr"
 created: "2026-09-10 14:44:51"
-updated: "2026-09-10 14:52:16"
+updated: "2026-09-10 15:31:44"
 folder: "模型部署/30服务器模型部署"
 ---
 
 # glm-ocr 模型部署
 
-`
-启动脚本地址：/home/admin/middleware/vllm-GLM-OCR/start.sh
-`
-`
-模型地址：/home/admin/models/GLM-OCR/
-`
+`启动脚本地址：/home/admin/middleware/vllm-GLM-OCR/start.sh`
+`模型地址：/home/admin/models/GLM-OCR/`
 
 ```
 #!/bin/bash
@@ -22,7 +18,7 @@ docker rm -f vllm-glm-ocr 2>/dev/null || true
 docker run -d \
   --name vllm-glm-ocr \
   --restart unless-stopped \
-  --gpus '"device=2"' \
+  --gpus '"device=3"' \
   -p 35663:8080 \
   -v /home/admin/models/GLM-OCR:/models/GLM-OCR \
   --entrypoint /bin/bash \
@@ -37,5 +33,4 @@ docker run -d \
       --dtype half \
       --trust-remote-code
   '
-
 ```
