@@ -1,11 +1,19 @@
 ---
 title: "qwen3-reranker-8b"
 created: "2026-09-07 10:44:28"
-updated: "2026-09-07 17:11:42"
+updated: "2026-09-10 14:42:14"
 folder: "模型部署/30服务器模型部署"
 ---
 
 # qwen3-embedding-8b 模型部署
+
+`
+启动脚本地址：/home/admin/middleware/vllm-Qwen3-Reranker-8B/start.sh
+`
+`
+模型地址：/home/admin/models/Qwen3-Reranker-8B
+`
+
 
 ```
 docker rm -f vllm-Qwen3-Reranker-8B 2>/dev/null || true

@@ -1,12 +1,17 @@
 ---
 title: "qwen3-embedding-8b"
 created: "2026-09-07 10:28:34"
-updated: "2026-09-07 17:12:06"
+updated: "2026-09-10 14:41:01"
 folder: "模型部署/30服务器模型部署"
 ---
 
 # qwen3-embedding-8b 模型部署
-
+`
+启动脚本地址：/home/admin/middleware/vllm-Qwen3-Embedding-8B/start.sh
+`
+`
+模型地址：/home/admin/models/Qwen--Qwen3-Embedding-8B
+`
 ```
 docker rm -f vllm-Qwen3-Embedding-8B 2>/dev/null || true
 
